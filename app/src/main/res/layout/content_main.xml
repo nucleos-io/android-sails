@@ -10,18 +10,42 @@
     android:orientation="vertical"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/btn_login"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="login"/>
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edit_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:inputType="phone"
+            android:hint="phone (+584249282769)"/>
+        <Button
+            android:id="@+id/btn_request_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:text="request code"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_change_status"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="change status"/>
-
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edit_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"
+            android:inputType="numberSigned"
+            android:hint="code"/>
+        <Button
+            android:id="@+id/btn_send_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:text="send code"/>
+    </LinearLayout>
 
 </LinearLayout>

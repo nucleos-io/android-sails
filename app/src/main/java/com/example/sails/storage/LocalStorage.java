@@ -1,4 +1,4 @@
-package com.example.sails;
+package com.example.sails.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,11 +8,11 @@ import android.content.SharedPreferences;
  */
 public class LocalStorage {
 
-    private static final String PREFERENCES = "shared_preferences";
+    private static final String PREFERENCES_NAME = "local_storage";
     private static final String ACCESS_TOKEN = "access_token";
 
-    public static void setAccessToken(String accessToken, Context context) {
-        SharedPreferences preferences = context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE);
+    public static void putAccessToken(String accessToken, Context context) {
+        SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
         preferences.edit()
         .putString(ACCESS_TOKEN, accessToken)
         .apply();
@@ -20,7 +20,7 @@ public class LocalStorage {
     }
 
     public static String getAccessToken(Context context) {
-        SharedPreferences preferences = context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
         return preferences.getString(ACCESS_TOKEN, null);
     }
 
